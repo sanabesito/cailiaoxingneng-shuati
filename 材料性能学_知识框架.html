@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>材料性能学 · 知识框架图</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F4E5F'/%3E%3Cpath d='M7 22l6-9 5 5 7-11' stroke='%23E07B39' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#F2F5F7; --ink:#18303F; --ink2:#51616D; --ink3:#8A98A3;
+    --line:#DCE4E9; --accent:#E07B39;
+    --c1:#1F4E5F; --c2:#3D6B8C; --c3:#5A4A8A; --c4:#8A5A3B; --c5:#2E7D5B; --c6:#8A3B5E;
+    --c7:#B9642B; --c8:#7A5C9E; --c9:#3E7CB1; --c10:#5C7A4A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    background:var(--paper);
+    background-image:linear-gradient(rgba(31,78,95,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(31,78,95,.035) 1px,transparent 1px);
+    background-size:28px 28px;color:var(--ink);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;
+    padding:34px 24px 70px;
+  }
+  .wrap{max-width:1240px;margin:0 auto}
+  header{text-align:center;margin-bottom:30px}
+  header .k{font-size:12px;letter-spacing:3px;color:var(--ink3);font-weight:600}
+  header h1{font-size:26px;font-weight:800;letter-spacing:1px;margin-top:6px}
+  header .s{font-size:13px;color:var(--ink2);margin-top:6px}
+
+  .root{
+    display:flex;align-items:center;justify-content:center;margin:6px auto 0;position:relative;
+  }
+  .root .node{
+    background:var(--ink);color:#fff;font-weight:800;font-size:16px;letter-spacing:2px;
+    padding:12px 34px;border-radius:12px;box-shadow:0 6px 18px rgba(24,48,63,.18);
+  }
+  .trunk{height:26px;width:2px;background:var(--ink);margin:0 auto;opacity:.45}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2px}
+  .chap{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px;
+    box-shadow:0 1px 2px rgba(24,48,63,.04),0 6px 16px rgba(24,48,63,.05);
+    border-top:4px solid var(--cc);
+  }
+  .chap .t{font-size:14.5px;font-weight:800;color:var(--cc);letter-spacing:.5px;margin-bottom:10px;line-height:1.5}
+  .chap ul{list-style:none}
+  .chap li{
+    font-size:13px;color:var(--ink2);padding:5px 0 5px 12px;position:relative;border-bottom:1px dashed var(--line);
+  }
+  .chap li:last-child{border-bottom:0}
+  .chap li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%;background:var(--cc)}
+  .chap li b{color:var(--ink);font-weight:700}
+
+  h2.section{
+    font-size:17px;font-weight:800;letter-spacing:1px;margin:44px 0 14px;display:flex;align-items:center;gap:10px;
+  }
+  h2.section::before{content:"";width:26px;height:4px;border-radius:2px;background:var(--accent);flex:0 0 auto}
+
+  table{
+    width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    font-size:13.5px;box-shadow:0 1px 2px rgba(24,48,63,.04),0 6px 16px rgba(24,48,63,.05);
+  }
+  th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line2)}
+  thead th{background:#EDF1F4;color:var(--ink);font-weight:800;font-size:13px;letter-spacing:.5px}
+  tbody tr:last-child td{border-bottom:0}
+  td.pair{font-weight:700;color:var(--navy,#1F4E5F);white-space:nowrap}
+  td.diff{color:var(--ink2);line-height:1.75}
+  .foot{margin-top:26px;text-align:center;font-size:12px;color:var(--ink3)}
+
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:600px){
+    body{padding:20px 12px 50px}
+    header h1{font-size:21px}
+    .grid{grid-template-columns:1fr}
+    td.pair{white-space:normal}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="k">MATERIALS PROPERTIES · KNOWLEDGE MAP</div>
+  <h1>材料性能学 · 知识框架</h1>
+  <div class="s">十章主线：力学性能（1–6）+ 热学、磁学、电学、耐蚀性能（7–10） —— 先立框架，再刷题记忆</div>
+</header>
+
+<div class="root"><div class="node">材料性能学（材料与结构性能评价）</div></div>
+<div class="trunk"></div>
+
+<div class="grid">
+
+  <div class="chap" style="--cc:var(--c1)">
+    <div class="t">第一章 · 材料单向静拉伸的力学性能</div>
+    <ul>
+      <li><b>拉伸试验</b>：力-伸长曲线四阶段（弹性→屈服→均匀变形→局部变形/颈缩）</li>
+      <li><b>应力应变</b>：工程σ-ε；真应力 S=σ(1+ε)、真应变 e=ln(1+ε)</li>
+      <li><b>弹性指标</b>：弹性模量E（组织不敏感）、比例极限σp、弹性极限σe</li>
+      <li><b>强度指标</b>：屈服强度σs/σ0.2、抗拉强度σb、应变硬化指数n</li>
+      <li><b>塑性指标</b>：伸长率δ、断面收缩率Ψ、超塑性</li>
+      <li><b>塑性机理</b>：滑移、孪生</li>
+      <li><b>断裂与断口</b>：韧性/脆性、穿晶/沿晶、解理/剪切、断口三要素</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c2)">
+    <div class="t">第二章 · 材料在其他状态下的力学性能</div>
+    <ul>
+      <li><b>压缩</b>：抗压强度σbc、相对压缩率；脆性材料、塑性材料不适用</li>
+      <li><b>扭转</b>：M-Φ曲线、τmax=M/Wt；变形均匀、对表面缺陷敏感</li>
+      <li><b>弯曲</b>：三点/四点弯曲、σ=M/W、挠度f</li>
+      <li><b>硬度</b>：布氏（测面积）、洛氏（测深度）、维氏（测载荷）</li>
+      <li><b>其他硬度</b>：显微硬度、肖氏（回跳）、莫氏（划痕）、纳米压痕</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c3)">
+    <div class="t">第三章 · 冲击韧性、低温脆性与断裂韧性</div>
+    <ul>
+      <li><b>冲击试验</b>：冲击吸收功Ak、冲击韧性值aKV、五大指标</li>
+      <li><b>低温脆性</b>：韧脆转变温度tK、迟屈服、蓝脆</li>
+      <li><b>转化温度测定</b>：50%FATT、V15TT、NDT、FTP、FTE</li>
+      <li><b>断裂力学</b>：裂纹扩展Ⅰ/Ⅱ/Ⅲ型、平面应力/平面应变</li>
+      <li><b>断裂韧度</b>：应力强度因子KI、断裂韧度KIC、塑性区修正</li>
+      <li><b>影响因素</b>：化学成分、组织、温度、应变速率</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c4)">
+    <div class="t">第四章 · 材料的疲劳性能</div>
+    <ul>
+      <li><b>疲劳基础</b>：定义、破坏特点（低应力、突发）、循环应力参量σm/σa/r</li>
+      <li><b>疲劳断口</b>：裂纹源、扩展区（贝纹线）、瞬断区</li>
+      <li><b>疲劳机理</b>：驻留滑移带、裂纹萌生与两阶段扩展、疲劳辉纹</li>
+      <li><b>抗力指标</b>：S-N曲线、σ-1、过载持久值、缺口敏感度qf、da/dN、ΔKth</li>
+      <li><b>影响因素</b>：工作条件、尺寸效应、表面强化、成分组织</li>
+      <li><b>热疲劳</b>：Δσ=EαΔT、热震临界温差</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c5)">
+    <div class="t">第五章 · 材料的磨损性能</div>
+    <ul>
+      <li><b>摩擦磨损</b>：摩擦系数μ=F/P、五类磨损</li>
+      <li><b>磨损过程</b>：跑合、稳定磨损、剧烈磨损三阶段</li>
+      <li><b>粘着磨损</b>：Archard式 W=KpL/(3HV)；涂抹/擦伤/撕脱/咬死</li>
+      <li><b>磨粒磨损</b>：两体/三体；W=KpL·tanθ/Hv；Hm=1.3Ha</li>
+      <li><b>接触疲劳</b>：赫兹应力、点蚀/浅层/深层剥落</li>
+      <li><b>其他</b>：微动损伤、腐蚀磨损（氧化磨损）</li>
+      <li><b>耐磨性测量</b>：U/V/W、称重法/尺寸法、铁谱/光谱分析</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c6)">
+    <div class="t">第六章 · 材料的高温蠕变性能</div>
+    <ul>
+      <li><b>高温与蠕变</b>：约比温度T/Tm＞0.3~0.5、蠕变定义</li>
+      <li><b>蠕变曲线</b>：减速、恒速、加速三阶段</li>
+      <li><b>蠕变机理</b>：位错滑移、原子扩散、晶界滑动</li>
+      <li><b>蠕变断裂</b>：沿晶断裂、等强温度、晶界裂纹模型</li>
+      <li><b>性能指标</b>：蠕变极限、持久强度、应力松弛</li>
+      <li><b>影响因素</b>：化学成分、组织、晶粒尺寸、应力、温度</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c7)">
+    <div class="t">第七章 · 材料的热学性能</div>
+    <ul>
+      <li><b>热容</b>：杜隆—珀替定律（3R≈25J/(K·mol)）、柯普定律（加和性）</li>
+      <li><b>量子热容</b>：爱因斯坦模型、德拜模型（Cv∝T³）、声子</li>
+      <li><b>热膨胀</b>：机理（非对称势能）、线/体膨胀系数α、格律乃森定律</li>
+      <li><b>热传导</b>：电子导热、声子导热、光子辐射三种方式</li>
+      <li><b>影响因素</b>：温度、晶体结构、化学组成、气孔</li>
+      <li><b>应用与测定</b>：双金属控温、过盈配合、膨胀法测TTT、热分析TG/DTA/DSC</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c8)">
+    <div class="t">第八章 · 材料的磁学性能</div>
+    <ul>
+      <li><b>磁性起源</b>：轨道磁矩、自旋磁矩、原子本征磁矩</li>
+      <li><b>物质分类</b>：抗磁/顺磁/铁磁/亚铁磁/反铁磁（按χ）</li>
+      <li><b>铁磁条件</b>：内壳层未填满 + Rab/r＞3（交换积分A＞0）</li>
+      <li><b>磁畴与畴壁</b>：自发磁化区域、磁畴宽度10⁻²~10⁻⁵cm</li>
+      <li><b>磁化与磁滞</b>：磁化曲线三阶段、Ms/Mr/Hc/磁滞回线</li>
+      <li><b>材料应用</b>：软磁（高μ低Hc）、硬磁（高Hc高(BH)m）、矩磁</li>
+      <li><b>影响因素</b>：温度（居里点TC）、形变、固溶体与多相合金</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c9)">
+    <div class="t">第九章 · 材料的电学性能</div>
+    <ul>
+      <li><b>导电理论</b>：经典自由电子、量子自由电子、能带理论（禁带/允带）</li>
+      <li><b>影响因素</b>：温度（ρ∝T⁵/T）、冷变形与应力、合金化</li>
+      <li><b>超导</b>：零电阻、迈斯纳效应；Tc、Hc、Jc 三指标</li>
+      <li><b>热电效应</b>：塞贝克、珀耳帖、汤姆逊；热电势影响因素</li>
+      <li><b>半导体敏感</b>：热敏、光敏（光电导/光生伏特）、压敏、磁敏（霍尔）</li>
+      <li><b>介电性能</b>：电子/离子/松弛/偶极子四种极化；电/热/化学击穿</li>
+    </ul>
+  </div>
+
+  <div class="chap" style="--cc:var(--c10)">
+    <div class="t">第十章 · 材料的耐蚀性能</div>
+    <ul>
+      <li><b>腐蚀类型</b>：化学/电化学腐蚀；均匀/点蚀/晶界/应力/磨损腐蚀</li>
+      <li><b>电化学机理</b>：腐蚀原电池（阳极/阴极/电解质/电路）、ΔG判据</li>
+      <li><b>耐蚀途径</b>：保护膜、提高电极电位、单相组织、覆盖层</li>
+      <li><b>不锈钢分类</b>：马氏体、铁素体、奥氏体、双相、沉淀硬化</li>
+      <li><b>合金元素</b>：Cr（n/8定律）、Ni、N、Mo、Ti、Nb 的作用</li>
+      <li><b>晶间腐蚀</b>：贫Cr区、TTS曲线、固溶处理与稳定化措施</li>
+    </ul>
+  </div>
+
+</div>
+
+<h2 class="section">高频易混名词辨析（简答题重点）</h2>
+<table>
+  <thead><tr><th style="width:34%">概念对</th><th>核心区别</th></tr></thead>
+  <tbody>
+    <tr><td class="pair">工程应力 σ vs 真应力 S</td><td class="diff">S=σ(1+ε)。σ按原始截面积A0计算，S按瞬时截面积A计算；拉伸时S恒大于σ。</td></tr>
+    <tr><td class="pair">工程应变 ε vs 真应变 e</td><td class="diff">e=ln(1+ε)。ε按原始标距计算，e按瞬时长度积分；真应变e恒小于工程应变ε。</td></tr>
+    <tr><td class="pair">比例极限 σp vs 弹性极限 σe</td><td class="diff">σp保证应力-应变按正比关系变化的最大应力；σe是材料由弹性过渡到弹-塑性变形时的应力。</td></tr>
+    <tr><td class="pair">上屈服 σsU vs 下屈服 σsL</td><td class="diff">上屈服对试验条件敏感、结果分散；下屈服再现性好，故取σsL作为屈服强度σs。</td></tr>
+    <tr><td class="pair">韧性断裂 vs 脆性断裂</td><td class="diff">韧性断裂前有明显塑性变形（有征兆），断口杯锥状、暗灰纤维状；脆性断裂无征兆、危害大，断口齐平、无数小平面。</td></tr>
+    <tr><td class="pair">穿晶断裂 vs 沿晶断裂</td><td class="diff">按裂纹扩展路线：穿过晶粒内部为穿晶；沿晶界扩展为沿晶（晶界弱化时发生）。</td></tr>
+    <tr><td class="pair">解理断裂 vs 剪切断裂</td><td class="diff">解理：正应力下原子结合键破坏、沿解理面（bcc为(100)）脆性穿晶断裂，断口河流状；剪切：切应力下沿滑移面滑移分离，断口锲形纤维状（微孔聚集型韧窝）。</td></tr>
+    <tr><td class="pair">布氏 / 洛氏 / 维氏硬度</td><td class="diff">布氏测压痕面积（压痕大、误差小）；洛氏测压痕深度（压痕小、效率高、误差大）；维氏测单位压痕面积载荷（压入角恒定、任意载荷可比）。</td></tr>
+    <tr><td class="pair">平面应力 vs 平面应变</td><td class="diff">薄板：εz不受约束，σz=0；厚板：εz=0，三向拉应力。KIC为平面应变断裂韧度。</td></tr>
+    <tr><td class="pair">应力强度因子 KI vs 断裂韧度 KIC</td><td class="diff">KI是力学参量（取决于外加应力、裂纹尺寸与类型）；KIC是力学性能指标（取决于材料成分、组织等内在因素）。关系类似σ与σs。</td></tr>
+    <tr><td class="pair">疲劳强度 σ-1 vs 门槛值 ΔKth</td><td class="diff">σ-1是光滑试样无限寿命疲劳强度（传统设计校核）；ΔKth是裂纹试样裂纹不扩展的ΔKI临界值（裂纹件设计校核，ΔKI=YΔσ√a≤ΔKth）。</td></tr>
+    <tr><td class="pair">低周疲劳 vs 高周疲劳</td><td class="diff">低周10²~10⁵次、应力近屈服、塑性应变循环，寿命取决于塑性变形幅；高周＞10⁵次、弹性为主，寿命取决于应力幅。</td></tr>
+    <tr><td class="pair">过载持久值 vs 过载损伤界</td><td class="diff">过载持久值是高于疲劳强度应力下断裂的循环周次（有限寿命，由曲线倾斜段确定）；过载损伤界是各过载应力下引起损伤最少周次的连线，其间为过载损伤区。</td></tr>
+    <tr><td class="pair">粘着磨损 vs 磨粒磨损</td><td class="diff">粘着：微凸体粘合-拽开，表面结疤，W∝pL/H；磨粒：硬粒子微切削/犁皱，表面沟槽，W∝pL·tanθ/H。</td></tr>
+    <tr><td class="pair">点蚀 / 浅层剥落 / 深层剥落</td><td class="diff">按最大切应力位置与深度：点蚀0.1~0.2mm（表面）、浅层0.2~0.4mm（次表层0.5~0.7b）、深层＞0.4mm（强化与未强化结合处）。</td></tr>
+    <tr><td class="pair">蠕变极限 vs 持久强度</td><td class="diff">蠕变极限是不产生过量塑性变形的抗力（变形判据）；持久强度是规定温度时间内不发生蠕变断裂的最大应力（断裂判据）。</td></tr>
+    <tr><td class="pair">蠕变 vs 应力松弛</td><td class="diff">蠕变：恒温恒载下应变随时间增长；应力松弛：总应变保持不变而应力随时间自行降低（剩余应力σsh越高，松弛稳定性越好）。</td></tr>
+    <tr><td class="pair">细晶强化 vs 高温粗晶</td><td class="diff">常温晶界强化，细化晶粒提高强度塑性；等强温度以上晶界强度低，细化晶粒反降强度，应粗化晶粒（减少晶界扩散）。</td></tr>
+    <tr><td class="pair">杜隆—珀替定律 vs 柯普定律</td><td class="diff">杜隆—珀替：单质原子热容几乎相等（3R≈25J/(K·mol)，高温适用）；柯普：化合物分子热容等于各元素原子热容之和（加和性，573K以上氧化物硅酸盐符合好）。</td></tr>
+    <tr><td class="pair">爱因斯坦模型 vs 德拜模型</td><td class="diff">爱因斯坦：原子独立振动、频率相同，低温Cv与T成指数关系（不符实验）；德拜：考虑原子相互作用、连续介质，低温Cv∝T³（德拜T立方定律）与实验非常相符。</td></tr>
+    <tr><td class="pair">一级相变 vs 二级相变（热容）</td><td class="diff">一级相变在临界温度Tc热容突变；二级相变在一个温度范围内进行、热焓突然升高、热容急剧增大。</td></tr>
+    <tr><td class="pair">电子导热 vs 声子导热</td><td class="diff">金属主要靠自由电子运动导热（λe=Ceυele/3）；非金属（离子晶体）主要靠晶格振动（声子）导热（λρ=Cρυρlρ/3）；另有光子辐射导热。</td></tr>
+    <tr><td class="pair">多晶石英 vs 石英玻璃（α）</td><td class="diff">结构紧密的晶体热膨胀系数较大（多晶石英α=12×10⁻⁶K⁻¹）；松散的非晶态玻璃膨胀系数较小（石英玻璃0.5×10⁻⁶K⁻¹）。</td></tr>
+    <tr><td class="pair">抗磁体 vs 顺磁体 vs 铁磁体</td><td class="diff">抗磁：χ＜0约10⁻⁶（削弱磁场，Cu、Ag、Au、Hg、Zn）；顺磁：χ＞0约10⁻³~10⁻⁶（微弱增强，Al、Pt、Pd、奥氏体不锈钢）；铁磁：χ大正数非线性（强烈增强，Fe、Co、Ni，TC以上转顺磁）。</td></tr>
+    <tr><td class="pair">居里点 TC vs 尼尔点 TN</td><td class="diff">TC是铁磁体转顺磁体的临界温度（T＞TC后χ=C/(T-TC)）；TN是反铁磁体χ最大值温度（TN以下反铁磁、以上象顺磁，χ=C/(T+Θ)、Θ≈TN）。</td></tr>
+    <tr><td class="pair">铁磁性 vs 亚铁磁性 vs 反铁磁性</td><td class="diff">铁磁：原子磁矩方向一致（自发磁化）；亚铁磁：大小不等磁矩反平行、未完全抵消；反铁磁：相邻磁矩相等且反平行、完全抵消（自发磁化强度为零）。</td></tr>
+    <tr><td class="pair">软磁材料 vs 硬磁材料</td><td class="diff">软磁：磁滞回线瘦小、高μ低Hc（纯Fe、硅钢、FeNi/FeCo、磁性陶瓷）；硬磁：回线肥大、高Hc/Mr/(BH)m（铁氧体、AlNiCo、Co、NdFeB）。</td></tr>
+    <tr><td class="pair">塞贝克效应 vs 珀耳帖效应</td><td class="diff">塞贝克（1821）：温差→电流（热电偶测温、温差发电）；珀耳帖（1834）：电流→温差（吸/放热、电子致冷），是塞贝克的逆效应、可逆。</td></tr>
+    <tr><td class="pair">导体 vs 半导体 vs 绝缘体</td><td class="diff">按电阻率：导体ρ＜10⁻²Ω·m；半导体10⁻²~10¹⁰Ω·m；绝缘体＞10¹⁰Ω·m；半导体与绝缘体导带皆空、价带皆满，区别仅在禁带宽度。</td></tr>
+    <tr><td class="pair">电击穿 vs 热击穿 vs 化学击穿</td><td class="diff">电击穿：电子雪崩、瞬息完成（10⁻⁷~10⁻⁸秒）、温度影响小；热击穿：损耗转热、散热受限急剧加热；化学击穿：高温潮湿高电压腐蚀环境、漏导发热或气孔气体电化学击穿。</td></tr>
+    <tr><td class="pair">位移极化 vs 松弛极化</td><td class="diff">位移极化（电子/离子）快（光频约10¹⁴Hz、10⁻¹²~10⁻¹³秒）、可逆；松弛极化慢（10⁻²~10⁻³秒）、不可逆、随温度有极大值（聚合物/晶体缺陷/玻璃体）。</td></tr>
+    <tr><td class="pair">化学腐蚀 vs 电化学腐蚀</td><td class="diff">化学腐蚀：金属与化学介质直接反应（非离子导体介质）、不产生腐蚀电流；电化学腐蚀：金属表面与电解质溶液反应（离子导体介质）、有腐蚀电流（腐蚀原电池）。</td></tr>
+    <tr><td class="pair">不锈钢 vs 耐酸钢</td><td class="diff">不锈钢：在空气、水等介质中耐蚀（＜0.01mm/年完全耐蚀）；耐酸钢：在酸碱等介质中耐蚀（＜0.1mm/年完全耐蚀）；耐蚀是相对的、针对具体介质。</td></tr>
+    <tr><td class="pair">铁素体形成元素 vs 奥氏体形成元素</td><td class="diff">铁素体形成元素：Cr、Mo、Si、Ti、Nb；奥氏体形成元素：Ni、C、N、Mn、Cu、Co。</td></tr>
+    <tr><td class="pair">475℃脆性 vs σ相脆性</td><td class="diff">475℃脆性：＞15%Cr钢在400~525℃长时间加热（以475℃最甚），铬有序化形成α″相共格内应力；σ相脆性：σ相高硬度、大体积效应、沿晶界分布。</td></tr>
+  </tbody>
+</table>
+
+<div class="foot">数据来源：《材料性能学》课程 PPT 十章（河海大学）· 本图为复习框架，术语口径以课件为准</div>
+
+</div>
+</body>
+</html>
